@@ -10,10 +10,11 @@ O objetivo é gerenciar uma lista de contatos simples, no final o aplicativo ser
 - Git / GitHub
 - Hospedagem no site PythonAnywhere
 
-## 📅 Status do Projeto
+## 📅 Status do Projeto (Previsão de conclusão: 7 dias) 
 - [x] Dia 1: Setup inicial e Git.
 - [x] Dia 2: Estrutura básica Flask.
-- [ ] Dia 3: Conexão com Banco de Dados.
+- [x] Dia 3: Conexão com Banco de Dados.
+- [ ] Dia 4: Começar a usar o Bootstrap para criar o formulário.
 
 ## ⚙️ Como rodar o projeto localmente
 1. Clone o repositório.
