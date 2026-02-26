@@ -1,13 +1,14 @@
 # 📞 Catálogo de Contatos
 
 Este é um projeto de estudo desenvolvido com **Flask**, **MySQL** e **Bootstrap**. 
-O objetivo é gerenciar uma lista de contatos simples.
+O objetivo é gerenciar uma lista de contatos simples, no final o aplicativo será hospedado no site PythonAnywhere.
 
 ## 🚀 Tecnologias Utilizadas
 - Python / Flask
 - MySQL
 - Bootstrap 5
 - Git / GitHub
+- Hospedagem no site PythonAnywhere
 
 ## 📅 Status do Projeto
 - [x] Dia 1: Setup inicial e Git.
