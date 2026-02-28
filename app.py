@@ -22,8 +22,25 @@ class Contato(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    lista_contatos = Contato.query.all()
+    return render_template('index.html', contatos=lista_contatos)
 
+
+@app.route('/add', methods=['POST'])
+def add_contato():
+    # Pegando os dados vindos do formulário HTML
+    nome = request.form.get('nome')
+    endereco = request.form.get('endereco')
+    telefone = request.form.get('telefone')
+
+    # Criando um novo objeto do tipo Contato
+    novo_contato = Contato(nome=nome, endereco=endereco, telefone=telefone)
+
+    # Salvando no Banco de Dados
+    db.session.add(novo_contato)
+    db.session.commit()
+
+    return redirect(url_for('index'))
 if __name__ == '__main__':
     # Cria o banco de dados e as tabelas automaticamente
     with app.app_context():

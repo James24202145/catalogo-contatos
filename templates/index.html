@@ -31,15 +31,17 @@
                 </tr>
             </thead>
             <tbody>
+                {% for contato in contatos %}
                 <tr>
-                    <td>Exemplo de Nome</td>
-                    <td>Rua de Teste, 123</td>
-                    <td>(11) 99999-9999</td>
+                    <td>{{ contato.nome }}</td>
+                    <td>{{ contato.endereco }}</td>
+                    <td>{{ contato.telefone }}</td>
                     <td>
                         <a href="#" class="btn btn-sm btn-warning">Editar</a>
                         <a href="#" class="btn btn-sm btn-danger">Excluir</a>
                     </td>
-                </tr>
+                 </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
