@@ -1,11 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Meu Catálogo de Contatos</title>
-</head>
-<body>
-    <h1>Olá! O Flask está funcionando.</h1>
-    <p>Em breve, aqui teremos nossa lista de contatos.</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card card-body">
+            <h5>Novo Contato</h5>
+            <form action="/add" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="nome" placeholder="Nome Completo" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="endereco" placeholder="Endereço" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="telefone" placeholder="Telefone" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Salvar Contato</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <table class="table table-striped table-hover bg-white shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Exemplo de Nome</td>
+                    <td>Rua de Teste, 123</td>
+                    <td>(11) 99999-9999</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="#" class="btn btn-sm btn-danger">Excluir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
