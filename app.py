@@ -1,10 +1,13 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
+# Isso ajuda o Flask a encontrar o arquivo dentro da pasta do projeto no servidor
+basedir = os.path.abspath(os.path.dirname(__file__))
 # Configuração do Banco de Dados (Cria um arquivo chamado contatos.db)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///contatos.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'contatos.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
