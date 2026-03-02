@@ -41,6 +41,29 @@ def add_contato():
     db.session.commit()
 
     return redirect(url_for('index'))
+
+@app.route('/delete/<int:id>')
+def delete_contato(id):
+    contato = Contato.query.get_or_404(id) # Busca o contato ou dá erro 404 se não existir
+    db.session.delete(contato)
+    db.session.commit()
+    return redirect(url_for('index'))
+
+
+@app.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit_contato(id):
+    contato = Contato.query.get_or_404(id)
+
+    if request.method == 'POST':
+        contato.nome = request.form.get('nome')
+        contato.endereco = request.form.get('endereco')
+        contato.telefone = request.form.get('telefone')
+        db.session.commit()
+        return redirect(url_for('index'))
+
+    return render_template('edit.html', contato=contato)
+
+
 if __name__ == '__main__':
     # Cria o banco de dados e as tabelas automaticamente
     with app.app_context():

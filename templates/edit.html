@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <h5>Editar Contato</h5>
+            <form action="/edit/{{ contato.id }}" method="POST">
+                <div class="mb-3">
+                    <input type="text" name="nome" value="{{ contato.nome }}" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="endereco" value="{{ contato.endereco }}" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="telefone" value="{{ contato.telefone }}" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success w-100">Atualizar</button>
+                <a href="/" class="btn btn-secondary w-100 mt-2">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

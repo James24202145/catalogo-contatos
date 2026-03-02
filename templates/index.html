@@ -37,8 +37,8 @@
                     <td>{{ contato.endereco }}</td>
                     <td>{{ contato.telefone }}</td>
                     <td>
-                        <a href="#" class="btn btn-sm btn-warning">Editar</a>
-                        <a href="#" class="btn btn-sm btn-danger">Excluir</a>
+                        <a href="/edit/{{ contato.id }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="/delete/{{ contato.id }}" class="btn btn-sm btn-danger">Excluir</a>
                     </td>
                  </tr>
                 {% endfor %}
