@@ -730,5 +730,5 @@ from app import app as application
 Volte na aba Web e clique no botão verde Reload.
 
 ✅ Pronto!
-Agora é só acessar http://seuusuario.pythonanywhere.com. O site deve carregar limpo, e quando você adicionar o primeiro contato, o arquivo contatos.db será criado automaticamente na pasta do projeto no servidor.
+Agora é só acessar <http://24202145.pythonanywhere.com> (meu site). O site deve carregar limpo, e quando você adicionar o primeiro contato, o arquivo contatos.db será criado automaticamente na pasta do projeto no servidor.
 
